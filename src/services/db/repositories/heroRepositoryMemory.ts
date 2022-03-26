@@ -15,7 +15,6 @@ export class HeroRepositoryMemory implements HeroRepository {
 
     this.heros.push(heroDataToSave);
 
-    console.log(heroDataToSave);
     return heroDataToSave;
   }
 }

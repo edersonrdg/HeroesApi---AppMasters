@@ -1,6 +1,4 @@
-import { paginate } from '../../../../helpers/paginateArr';
 import { IUseCase } from '../../../../interfaces/useCase';
-import { heroObjectSorting } from '../../helpers/heroObjectSort';
 import { Hero } from '../../interface';
 import { HeroRepository } from '../../repository';
 import { AddHeroInput } from './interface';
