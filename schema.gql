@@ -3,6 +3,62 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+input AddHero {
+  appearance: AddHeroAppearance
+  biography: AddHeroBiography
+  connections: AddHeroConnections
+  images: AddHeroImages
+  name: String!
+  powerstats: AddHeroPowerstats
+  slug: String
+  work: AddHeroWork
+}
+
+input AddHeroAppearance {
+  eyeColor: String
+  gender: String
+  hairColor: String
+  height: [String!]
+  race: String
+  weight: [String!]
+}
+
+input AddHeroBiography {
+  aliases: [String!]
+  alignment: String
+  alterEgos: String
+  firstAppearance: String
+  fullName: String
+  placeOfBirth: String
+  publisher: String
+}
+
+input AddHeroConnections {
+  groupAffiliation: String
+  relatives: String
+}
+
+input AddHeroImages {
+  lg: String
+  md: String
+  sm: String
+  xs: String
+}
+
+input AddHeroPowerstats {
+  combat: Float
+  durability: Float
+  intelligence: Float
+  power: Float
+  speed: Float
+  strength: Float
+}
+
+input AddHeroWork {
+  base: String
+  occupation: String
+}
+
 type Hero {
   appearance: HeroAppearance
   biography: HeroBiography
@@ -58,6 +114,10 @@ type HeroPowerstats {
 type HeroWork {
   base: String
   occupation: String
+}
+
+type Mutation {
+  createHero(data: AddHero!): Hero!
 }
 
 type Query {

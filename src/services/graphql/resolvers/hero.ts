@@ -1,6 +1,8 @@
-import { Arg, Query, Resolver } from 'type-graphql';
+import { Arg, Mutation, Query, Resolver } from 'type-graphql';
+import { makeAddHeroController } from '../../../modules/hero/useCases/addHero';
 import { makeGetAllHeroesController } from '../../../modules/hero/useCases/getAllHeroes';
 import { adaptResolver } from '../resolverAdapter';
+import { AddHero } from '../type-defs/addHero';
 import { Hero } from '../type-defs/hero';
 
 @Resolver()
@@ -20,5 +22,10 @@ export class HeroResolver {
     @Arg('query', { nullable: true }) query: string,
   ) {
     return adaptResolver(makeGetAllHeroesController(), { filter, query });
+  }
+
+  @Mutation(() => Hero)
+  async createHero(@Arg('data') heroInputData: AddHero) {
+    return adaptResolver(makeAddHeroController(), heroInputData);
   }
 }

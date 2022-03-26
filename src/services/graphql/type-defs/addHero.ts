@@ -1,7 +1,7 @@
-import { Field, InputType, ObjectType } from 'type-graphql';
+import { Field, InputType } from 'type-graphql';
 
-@ObjectType()
-class HeroPowerstats {
+@InputType()
+class AddHeroPowerstats {
   @Field({ nullable: true })
   intelligence: number;
 
@@ -21,8 +21,8 @@ class HeroPowerstats {
   combat: number;
 }
 
-@ObjectType()
-class HeroAppearance {
+@InputType()
+class AddHeroAppearance {
   @Field({ nullable: true })
   gender: string;
 
@@ -42,8 +42,8 @@ class HeroAppearance {
   weight: [string];
 }
 
-@ObjectType()
-class HeroBiography {
+@InputType()
+class AddHeroBiography {
   @Field({ nullable: true })
   fullName: string;
 
@@ -66,8 +66,8 @@ class HeroBiography {
   alignment: string;
 }
 
-@ObjectType()
-class HeroWork {
+@InputType()
+class AddHeroWork {
   @Field({ nullable: true })
   occupation: string;
 
@@ -75,8 +75,8 @@ class HeroWork {
   base: string;
 }
 
-@ObjectType()
-class HeroConnections {
+@InputType()
+class AddHeroConnections {
   @Field({ nullable: true })
   groupAffiliation: string;
 
@@ -84,8 +84,8 @@ class HeroConnections {
   relatives: string;
 }
 
-@ObjectType()
-class HeroImages {
+@InputType()
+class AddHeroImages {
   @Field({ nullable: true })
   xs: string;
 
@@ -99,11 +99,8 @@ class HeroImages {
   lg: string;
 }
 
-@ObjectType()
-export class Hero {
-  @Field({ nullable: false })
-  id: number;
-
+@InputType()
+export class AddHero {
   @Field({ nullable: false })
   name: string;
 
@@ -111,20 +108,20 @@ export class Hero {
   slug: string;
 
   @Field({ nullable: true })
-  powerstats: HeroPowerstats;
+  powerstats: AddHeroPowerstats;
 
   @Field({ nullable: true })
-  appearance: HeroAppearance;
+  appearance: AddHeroAppearance;
 
   @Field({ nullable: true })
-  biography: HeroBiography;
+  biography: AddHeroBiography;
 
   @Field({ nullable: true })
-  work: HeroWork;
+  work: AddHeroWork;
 
   @Field({ nullable: true })
-  connections: HeroConnections;
+  connections: AddHeroConnections;
 
   @Field({ nullable: true })
-  images: HeroImages;
+  images: AddHeroImages;
 }
