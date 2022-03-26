@@ -1,11 +1,11 @@
-import { noContent } from '../../../../helpers/http';
-import { IController } from '../../../../interfaces/controller';
-import { IHttpResponse } from '../../../../interfaces/http-response';
+import { ok } from '../../../../helpers/http';
+import { IUseCase, IController, IHttpResponse } from '../../../../interfaces';
 
 export class GetAllHeroesController implements IController {
-  constructor(private readonly getHeroes: IUseCase<>) {}
+  constructor(private readonly getHeroes: IUseCase) {}
 
   async handle(): Promise<IHttpResponse> {
-    return noContent();
+    const data = await this.getHeroes.exec();
+    return ok(data);
   }
 }
