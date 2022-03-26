@@ -3,6 +3,63 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+type Hero {
+  appearance: HeroAppearance
+  biography: HeroBiography
+  connections: HeroConnections
+  id: Float!
+  images: HeroImages
+  name: String!
+  powerstats: HeroPowerstats
+  slug: String
+  work: HeroWork
+}
+
+type HeroAppearance {
+  eyeColor: String
+  gender: String
+  hairColor: String
+  height: [String!]
+  race: String
+  weight: [String!]
+}
+
+type HeroBiography {
+  aliases: [String!]
+  alignment: String
+  alterEgos: String
+  firstAppearance: String
+  fullName: String
+  placeOfBirth: String
+  publisher: String
+}
+
+type HeroConnections {
+  groupAffiliation: String
+  relatives: String
+}
+
+type HeroImages {
+  lg: String
+  md: String
+  sm: String
+  xs: String
+}
+
+type HeroPowerstats {
+  combat: Float
+  durability: Float
+  intelligence: Float
+  power: Float
+  speed: Float
+  strength: Float
+}
+
+type HeroWork {
+  base: String
+  occupation: String
+}
+
 type Query {
-  listHeroes: String
+  listHeroes: [Hero!]
 }
