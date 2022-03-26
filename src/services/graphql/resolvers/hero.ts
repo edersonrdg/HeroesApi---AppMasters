@@ -9,7 +9,8 @@ export class HeroResolver {
   async listHeroes(
     @Arg('limit', { defaultValue: 30, nullable: true }) limit: number,
     @Arg('order', { nullable: true }) order: string,
+    @Arg('page', { defaultValue: 1, nullable: true }) page: number,
   ) {
-    return adaptResolver(makeGetAllHeroesController(), { limit, order });
+    return adaptResolver(makeGetAllHeroesController(), { limit, order, page });
   }
 }

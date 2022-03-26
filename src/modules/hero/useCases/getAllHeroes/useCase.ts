@@ -1,13 +1,19 @@
+import { paginate } from '../../../../helpers/paginateArr';
 import { IUseCase } from '../../../../interfaces/useCase';
+import { heroObjectSorting } from '../../helpers/heroObjectSort';
 import { Hero } from '../../interface';
 import { HeroRepository } from '../../repository';
-import { InputQuery } from './interface';
+import { IPaginationParams } from './interface';
 
-export class GetAllHeroesUseCase implements IUseCase<InputQuery, Hero[]> {
+export class GetAllHeroesUseCase
+  implements IUseCase<IPaginationParams, Hero[]>
+{
   constructor(private readonly heroRepository: HeroRepository) {}
 
-  async exec(data?: InputQuery): Promise<Hero[]> {
+  async exec(paginationParams: IPaginationParams): Promise<Hero[]> {
     const herosdata = await this.heroRepository.getAll();
-    return herosdata;
+    const sortHeroesArr = heroObjectSorting(herosdata, paginationParams);
+    const heroesPaginated = paginate(sortHeroesArr, paginationParams);
+    return heroesPaginated;
   }
 }
