@@ -4,5 +4,5 @@
 # -----------------------------------------------
 
 type Query {
-  heroes: String
+  listHeroes: String
 }
