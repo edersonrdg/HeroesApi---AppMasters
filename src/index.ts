@@ -4,7 +4,7 @@ import { execSeeds } from './services/db/seed';
 import app from './services/express/app';
 import { buildGplSchema } from './services/graphql';
 
-const PORT = 8080;
+const PORT = process.env.PORT || 4000;
 
 const main = async () => {
   const schema = await buildGplSchema();
