@@ -61,5 +61,6 @@ type HeroWork {
 }
 
 type Query {
-  listHeroes(limit: Float = 30, order: String, page: Float = 1): [Hero!]
+  listHeroes(limit: Float = 100, order: String, page: Float = 1): [Hero!]
+  searchHeroes(filter: String, query: String): [Hero!]
 }
