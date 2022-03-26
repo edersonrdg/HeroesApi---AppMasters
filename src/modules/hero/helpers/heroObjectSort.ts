@@ -9,7 +9,7 @@ export function heroObjectSorting(
   data: Hero[],
   params: IPaginationParams,
 ): Hero[] {
-  const order = params.order;
+  const { order, query, filter } = params;
   const heroArrFormatToSort = formatHeroDataToSortOrSearch(data);
 
   const sortedHeroData = heroArrFormatToSort.sort((a: any, b: any) => {
@@ -22,5 +22,13 @@ export function heroObjectSorting(
     return 0;
   });
 
-  return formatHeroToReturn(sortedHeroData);
+  const filteredHeroData = query
+    ? sortedHeroData.filter(heroData =>
+        filter
+          ? heroData[`${filter}`] === query
+          : Object.values(heroData).find(value => value === query),
+      )
+    : sortedHeroData;
+
+  return formatHeroToReturn(filteredHeroData);
 }
