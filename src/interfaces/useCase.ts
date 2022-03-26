@@ -1,3 +1,3 @@
 export interface IUseCase<Input = any, Output = any> {
-  exec: (data?: Input) => Promise<Output | null>;
+  exec: (data?: Input) => Promise<Output>;
 }
