@@ -1,12 +1,12 @@
-import { ApolloServer } from "apollo-server-express";
-import { GraphQLSchema } from "graphql";
+import { ApolloServer } from 'apollo-server-express'
+import { GraphQLSchema } from 'graphql'
 
 import app from '../express/app'
 
 export const startApolloServer = async (schema: GraphQLSchema) => {
   const server = new ApolloServer({
-    schema,
-  });
+    schema
+  })
 
   await server.start()
 
