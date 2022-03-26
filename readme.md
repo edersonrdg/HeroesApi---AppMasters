@@ -37,7 +37,7 @@ npm run start:dev
 
 Acesse a url abaixo:
 ```sh
-http://localhost:8080/graphql
+http://localhost:5000/graphql
 
 ```
 
