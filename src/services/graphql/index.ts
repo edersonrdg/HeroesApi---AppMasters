@@ -1,11 +1,10 @@
 import { buildSchema, Resolver } from "type-graphql"
+import { HeroResolver } from "./resolvers/hero"
 
-@Resolver()
-class InitResolver {}
 
 export const buildGplSchema = async () => {
   return await buildSchema({
-    resolvers: [InitResolver],
+    resolvers: [HeroResolver],
     emitSchemaFile: true,
     validate: false,
   })

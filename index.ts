@@ -9,7 +9,7 @@ const main = async () => {
   const schema = await buildGplSchema()
   const apolloserver = await startApolloServer(schema)
 
-  app.listen(PORT, () => console.log(`server starting on http://localhost:${PORT}`))
+  app.listen(PORT, () => console.log(`server starting on http://localhost:${PORT}${apolloserver.graphqlPath}`))
 }
 
 main().catch((error) => {
