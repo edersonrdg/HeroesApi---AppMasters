@@ -20,7 +20,7 @@
     "typescript": "^4.6.3"
   },
   "scripts": {
-    "dev": "tsnd index.ts"
+    "start": "tsnd index.ts"
   },
   "dependencies": {
     "apollo-server-express": "^3.6.6",
