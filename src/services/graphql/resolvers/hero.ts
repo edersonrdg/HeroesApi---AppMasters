@@ -1,5 +1,5 @@
 import { Query, Resolver } from 'type-graphql';
-import { GetAllHeroesController } from '../../../modules/hero/useCases/getAllHeros/controller';
+import { GetAllHeroesController } from '../../../modules/hero/controllers/getAllHeroesController';
 import { adaptResolver } from '../resolverAdapter';
 
 @Resolver()
