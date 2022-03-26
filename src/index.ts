@@ -1,8 +1,8 @@
 import 'reflect-metadata';
-import { startApolloServer } from './src/services/apollo-server-express';
-import { execSeeds } from './src/services/db/seed';
-import app from './src/services/express/app';
-import { buildGplSchema } from './src/services/graphql';
+import { startApolloServer } from './services/apollo-server-express';
+import { execSeeds } from './services/db/seed';
+import app from './services/express/app';
+import { buildGplSchema } from './services/graphql';
 
 const PORT = 8080;
 
