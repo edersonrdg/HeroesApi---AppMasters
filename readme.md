@@ -41,6 +41,21 @@ http://localhost:8080/graphql
 
 ```
 
+## Docker-compose
+
+execute o seguinte comando para rodar localmente com docker-compose:
+
+```sh
+docker-compose up
+
+```
+
+Acesse a url abaixo:
+```sh
+http://localhost:8080/graphql
+
+```
+
 
 ## Autor
 
