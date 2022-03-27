@@ -31,7 +31,7 @@ npm install
 execute o seguinte comando:
 
 ```sh
-npm run start:dev
+npm run dev
 
 ```
 
